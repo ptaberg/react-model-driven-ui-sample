@@ -3,13 +3,14 @@ import {Button} from './components/Button';
 import {Interface} from './module/Interface';
 
 export const Library = {
-  button: Button
+  button: Button,
+  div: 'div'
 }
 
 interface UIComponent {
   element: string,
   content?: UIComponent | null | string
-  properties?: Array<string>
+  properties?: object
 }
 
 export type TOntology = UIComponent[];
@@ -17,7 +18,13 @@ export type TOntology = UIComponent[];
 const Ontology: TOntology = [
     {
       element: "button",
-      content: "Say my name"
+      properties: {
+        title: "Hello"
+      }
+    },
+    {
+      element: "div",
+      content: "Hello"
     },
     {
       element: "button",

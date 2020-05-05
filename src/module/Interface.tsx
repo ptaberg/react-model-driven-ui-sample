@@ -15,15 +15,12 @@ interface TInterface {
     lib: any
 }
 
-        // React.createElement(lib[(e.element)], {
-        //     title: "Hllo",
-        // }, null))
-
 export function Interface({ontology, lib}: TInterface) {
     const Tree = ontology.map(e => {
-        return React.createElement(lib[(e.element)], {
-            title: e.content,
-        }, null)
+        const {element, properties, content} = e;
+        return React.createElement(lib[(element)], {
+            ...properties,
+        }, content)
     })
 
     return <div>{Tree}</div>
