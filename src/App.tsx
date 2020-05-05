@@ -1,25 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Button} from './components/Button';
+import {Interface} from './module/Interface';
 
+export const Library = {
+  button: Button
+}
+
+interface UIComponent {
+  element: string,
+  content?: UIComponent | null | string
+  properties?: Array<string>
+}
+
+export type TOntology = UIComponent[];
+
+const Ontology: TOntology = [
+    {
+      element: "button",
+      content: "Say my name"
+    },
+    {
+      element: "button",
+      content: "Hello"
+    },
+  ]
+
+// @ts-ignore
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Interface
+      ontology={Ontology}
+      lib={Library}
+    />
   );
 }
 
