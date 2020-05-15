@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Button} from './components/Button';
 import {Interface} from './module/Interface';
+import JSONInput from 'react-json-editor-ajrm';
 
 export const Library = {
   button: Button,
@@ -28,17 +29,26 @@ const Ontology: TOntology = [
     },
     {
       element: "button",
-      content: "Hello"
+      content: "Hello" 
     },
   ]
 
 // @ts-ignore
 function App() {
+  const [json, setJson] = useState(Ontology);
+
   return (
+    <div style={{display: 'flex'}}>
+    <JSONInput
+      height='100vh'
+      placeholder={json}
+      onChange={function() { setJson(arguments[0].jsObject) }}
+    />
     <Interface
-      ontology={Ontology}
+      ontology={json}
       lib={Library}
     />
+    </div>
   );
 }
 
