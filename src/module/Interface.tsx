@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
-import { Button } from '../components/Button';
-import { TOntology } from '../App';
-
-// const Ontology = {
-//     'RootLayout': {
-//       'button': {
-//         content: "Hello"
-//       }
-//     }
-//   }
+import { TModel } from '../App';
 
 interface TInterface {
-    ontology: TOntology,
+    model: TModel,
     lib: any
 }
 
-export function Interface({ontology, lib}: TInterface) {
-    const Tree = ontology.map(e => {
+export function Interface({model, lib}: TInterface) {
+    if (typeof model !== "object") {
+        return null
+    }
+    
+    const Tree = model.map(e => {
         const {element, properties, content} = e;
         return React.createElement(lib[(element)], {
             ...properties,
