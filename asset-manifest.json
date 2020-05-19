@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-model-driven-ui-sample/static/css/main.7ec1b171.chunk.css",
+    "main.js": "/react-model-driven-ui-sample/static/js/main.32fb3987.chunk.js",
+    "main.js.map": "/react-model-driven-ui-sample/static/js/main.32fb3987.chunk.js.map",
+    "runtime-main.js": "/react-model-driven-ui-sample/static/js/runtime-main.e42db673.js",
+    "runtime-main.js.map": "/react-model-driven-ui-sample/static/js/runtime-main.e42db673.js.map",
+    "static/js/2.edb63383.chunk.js": "/react-model-driven-ui-sample/static/js/2.edb63383.chunk.js",
+    "static/js/2.edb63383.chunk.js.map": "/react-model-driven-ui-sample/static/js/2.edb63383.chunk.js.map",
+    "index.html": "/react-model-driven-ui-sample/index.html",
+    "precache-manifest.ca34b25030ef67b4b56bdd1ecb80a355.js": "/react-model-driven-ui-sample/precache-manifest.ca34b25030ef67b4b56bdd1ecb80a355.js",
+    "service-worker.js": "/react-model-driven-ui-sample/service-worker.js",
+    "static/css/main.7ec1b171.chunk.css.map": "/react-model-driven-ui-sample/static/css/main.7ec1b171.chunk.css.map",
+    "static/js/2.edb63383.chunk.js.LICENSE.txt": "/react-model-driven-ui-sample/static/js/2.edb63383.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e42db673.js",
+    "static/js/2.edb63383.chunk.js",
+    "static/css/main.7ec1b171.chunk.css",
+    "static/js/main.32fb3987.chunk.js"
+  ]
+}
