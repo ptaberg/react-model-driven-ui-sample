@@ -4,7 +4,6 @@ import JSONInput from 'react-json-editor-ajrm';
 import './App.css';
 import 'antd/dist/antd.css';
 import { Button, Checkbox, Input, Radio, Switch, Table, Alert } from 'antd';
-import { element } from 'prop-types';
 
 export const Library = {
   button: Button,
@@ -14,6 +13,8 @@ export const Library = {
   textForm: Input,
   table: Table,
   alert: Alert,
+  image: "img",
+  text: "p",
   div: 'div',
 }
 
@@ -90,6 +91,16 @@ const defaultModel: TModel = [
   },
   {
     element: "radio"
+  },
+  {
+    element: "image",
+    properties: {
+      src: "https://ca.slack-edge.com/TNUUJ05H8-UQN3LT2TW-472532f3ddea-512"
+    }
+  },
+  {
+    element: "text",
+    content: "It's Michael, and He is Tech Lead"
   }
 ]
 
@@ -100,8 +111,8 @@ function App() {
   return (
     <div style={{display: 'flex'}}>
     <JSONInput
-      height='100vh'
-      width='40vh'
+      height='100%'
+      width='45vh'
       placeholder={json}
       onChange={function() { setJson(arguments[0].jsObject) }}
     />
