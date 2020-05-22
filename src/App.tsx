@@ -100,7 +100,7 @@ const defaultModel: TModel = [
   },
   {
     element: "text",
-    content: "I want to build normal and adequate full stack apps, please"
+    content: "Hello, World! It's a text component"
   }
 ]
 
