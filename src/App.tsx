@@ -95,12 +95,12 @@ const defaultModel: TModel = [
   {
     element: "image",
     properties: {
-      src: "https://ca.slack-edge.com/TNUUJ05H8-UQN3LT2TW-472532f3ddea-512"
+      src: "https://static.tildacdn.com/tild3764-3337-4334-b163-636437656662/10.jpg"
     }
   },
   {
     element: "text",
-    content: "It's Michael, and He is Tech Lead"
+    content: "I want to build normal and adequate full stack apps, please"
   }
 ]
 
