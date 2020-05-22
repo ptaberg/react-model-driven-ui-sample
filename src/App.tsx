@@ -1,12 +1,20 @@
 import React, {useState} from 'react';
-import {Button} from './components/Button';
 import {Interface} from './module/Interface';
 import JSONInput from 'react-json-editor-ajrm';
 import './App.css';
+import 'antd/dist/antd.css';
+import { Button, Checkbox, Input, Radio, Switch, Table, Alert } from 'antd';
+import { element } from 'prop-types';
 
 export const Library = {
   button: Button,
-  div: 'div'
+  radio: Radio,
+  switch: Switch,
+  checkbox: Checkbox,
+  textForm: Input,
+  table: Table,
+  alert: Alert,
+  div: 'div',
 }
 
 interface UIComponent {
@@ -21,17 +29,68 @@ const defaultModel: TModel = [
   {
     element: "button",
     properties: {
-      title: "Hello"
-    }
-  },
-  {
-    element: "div",
+      type: "primary"
+    },
     content: "Hello"
   },
   {
-    element: "button",
-    content: "Hello" 
+    element: "checkbox"
   },
+  {
+    element: "switch"
+  },
+  {
+    element: "textForm",
+    properties: {
+      placeholder: "placeholder"
+    },
+  },
+  {
+    element: "table",
+    properties: {
+      dataSource: [
+        {
+          key: '1',
+          name: 'Mike',
+          age: 32,
+          address: '10 Downing Street',
+        },
+        {
+          key: '2',
+          name: 'John',
+          age: 42,
+          address: '10 Downing Street',
+        },
+      ],
+      columns: [
+        {
+          title: 'Name',
+          dataIndex: 'name',
+          key: 'name',
+        },
+        {
+          title: 'Age',
+          dataIndex: 'age',
+          key: 'age',
+        },
+        {
+          title: 'Address',
+          dataIndex: 'address',
+          key: 'address',
+        },
+      ]
+    }
+  },
+  {
+    element: 'alert',
+    properties: {
+      message: "Gute",
+      type: "success"
+    },
+  },
+  {
+    element: "radio"
+  }
 ]
 
 function App() {
