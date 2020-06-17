@@ -35,6 +35,13 @@ const defaultModel: TModel = [
     content: "Hello"
   },
   {
+    element: 'div',
+    content: [{
+      element: 'text',
+      content: 'Hello'
+    }]
+  },
+  {
     element: "checkbox"
   },
   {
@@ -104,12 +111,17 @@ const defaultModel: TModel = [
   }
 ]
 
+const e = React.createElement;
+
+const El = () => e('div', null, e('p', null, 'Hello'))
+
 function App() {
   const [json, setJson] = useState(defaultModel);
   console.log(json);
 
   return (
     <div style={{display: 'flex'}}>
+    <El />
     <JSONInput
       height='100%'
       width='45vh'
@@ -117,6 +129,8 @@ function App() {
       onChange={function() { setJson(arguments[0].jsObject) }}
     />
       <div>
+        <div>
+        </div>
         <Interface
           model={json}
           lib={Library}
