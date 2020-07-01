@@ -3,6 +3,7 @@ import {Interface} from './module/Interface';
 import JSONInput from 'react-json-editor-ajrm';
 import './App.css';
 import 'antd/dist/antd.css';
+import Layout from './components/Layout';
 import { Button, Checkbox, Input, Radio, Switch, Table, Alert } from 'antd';
 
 export const Library = {
@@ -16,6 +17,7 @@ export const Library = {
   image: "img",
   text: "p",
   div: 'div',
+  layout: Layout,
 }
 
 interface UIComponent {
@@ -108,12 +110,30 @@ const defaultModel: TModel = [
   {
     element: "text",
     content: "Hello, World! It's a text component"
+  },
+  {
+    element: "layout",
+    properties: {
+      
+    },
+    content: [{
+      element: "div",
+      content: "hello",
+      properties: {
+        width: "100",
+        height: "100"
+      }
+    },
+    {
+      element: "div",
+      content: "world",
+      properties: {
+        width: "100",
+        height: "100"
+      }
+    }]
   }
 ]
-
-const e = React.createElement;
-
-const El = () => e('div', null, e('p', null, 'Hello'))
 
 function App() {
   const [json, setJson] = useState(defaultModel);
@@ -121,7 +141,6 @@ function App() {
 
   return (
     <div style={{display: 'flex'}}>
-    <El />
     <JSONInput
       height='100%'
       width='45vh'

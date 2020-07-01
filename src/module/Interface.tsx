@@ -5,14 +5,13 @@ interface UIComponent {
     element: string,
     content?: UIComponent[] | null | string
     properties?: object
-  }
+}
 
 function iterate(comp: UIComponent[]) {
     return comp.map((e: UIComponent) => {
         return React.createElement(e.element, e.properties, e.content);
     })
 }
-  
 
 interface TInterface {
     model: TModel,
@@ -22,7 +21,7 @@ interface TInterface {
 export function Interface({model, lib}: TInterface) {
     if (typeof model !== "object") {
         return null
-    }
+    } 
     // @ts-ignore
     const iterate = (model: UIComponent[]) => {
         return model.map(e => {
