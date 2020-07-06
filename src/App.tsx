@@ -114,7 +114,7 @@ const defaultModel: TModel = [
   {
     element: "layout",
     properties: {
-      
+      "direction": "column"
     },
     content: [{
       element: "div",

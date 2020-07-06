@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { TModel } from '../App';
+import React from 'react';
 
 interface UIComponent {
     element: string,
@@ -14,7 +13,7 @@ function iterate(comp: UIComponent[]) {
 }
 
 interface TInterface {
-    model: TModel,
+    model: UIComponent[],
     lib: any
 }
 
