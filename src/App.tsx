@@ -1,12 +1,23 @@
 import React, {useState} from 'react';
-import {Button} from './components/Button';
 import {Interface} from './module/Interface';
 import JSONInput from 'react-json-editor-ajrm';
 import './App.css';
+import 'antd/dist/antd.css';
+import Layout from './components/Layout';
+import { Button, Checkbox, Input, Radio, Switch, Table, Alert } from 'antd';
 
 export const Library = {
   button: Button,
-  div: 'div'
+  radio: Radio,
+  switch: Switch,
+  checkbox: Checkbox,
+  textForm: Input,
+  table: Table,
+  alert: Alert,
+  image: "img",
+  text: "p",
+  div: 'div',
+  layout: Layout,
 }
 
 interface UIComponent {
@@ -21,17 +32,107 @@ const defaultModel: TModel = [
   {
     element: "button",
     properties: {
-      title: "Hello"
-    }
-  },
-  {
-    element: "div",
+      type: "primary"
+    },
     content: "Hello"
   },
   {
-    element: "button",
-    content: "Hello" 
+    element: 'div',
+    content: [{
+      element: 'text',
+      content: 'Hello'
+    }]
   },
+  {
+    element: "checkbox"
+  },
+  {
+    element: "switch"
+  },
+  {
+    element: "textForm",
+    properties: {
+      placeholder: "placeholder"
+    },
+  },
+  {
+    element: "table",
+    properties: {
+      dataSource: [
+        {
+          key: '1',
+          name: 'Mike',
+          age: 32,
+          address: '10 Downing Street',
+        },
+        {
+          key: '2',
+          name: 'John',
+          age: 42,
+          address: '10 Downing Street',
+        },
+      ],
+      columns: [
+        {
+          title: 'Name',
+          dataIndex: 'name',
+          key: 'name',
+        },
+        {
+          title: 'Age',
+          dataIndex: 'age',
+          key: 'age',
+        },
+        {
+          title: 'Address',
+          dataIndex: 'address',
+          key: 'address',
+        },
+      ]
+    }
+  },
+  {
+    element: 'alert',
+    properties: {
+      message: "Gute",
+      type: "success"
+    },
+  },
+  {
+    element: "radio"
+  },
+  {
+    element: "image",
+    properties: {
+      src: "https://static.tildacdn.com/tild3764-3337-4334-b163-636437656662/10.jpg"
+    }
+  },
+  {
+    element: "text",
+    content: "Hello, World! It's a text component"
+  },
+  {
+    element: "layout",
+    properties: {
+      "direction": "column"
+    },
+    content: [{
+      element: "div",
+      content: "hello",
+      properties: {
+        width: "100",
+        height: "100"
+      }
+    },
+    {
+      element: "div",
+      content: "world",
+      properties: {
+        width: "100",
+        height: "100"
+      }
+    }]
+  }
 ]
 
 function App() {
@@ -41,12 +142,14 @@ function App() {
   return (
     <div style={{display: 'flex'}}>
     <JSONInput
-      height='100vh'
-      width='40vh'
+      height='100%'
+      width='45vh'
       placeholder={json}
       onChange={function() { setJson(arguments[0].jsObject) }}
     />
       <div>
+        <div>
+        </div>
         <Interface
           model={json}
           lib={Library}
